@@ -48,6 +48,7 @@ export default class MainScreen extends Component{
                                         name={'ios-heart'}
                                         size={25}
                                         color={color}
+                                        badgeCount={9}
                                     />
                                 );
                             }

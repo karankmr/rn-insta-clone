@@ -4,7 +4,7 @@ import React from "react";
 
 function IconWithBadge({ name, badgeCount, color, size }) {
     return (
-        <View style={{ width: 24, height: 24, margin: 5 }}>
+        <View style={{ width: 24, height: 24, margin: 15 }}>
             <Ionicons name={name} size={size} color={color} />
             {badgeCount > 0 && (
                 <View

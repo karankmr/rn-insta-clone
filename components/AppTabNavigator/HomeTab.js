@@ -6,6 +6,7 @@ class HomeTab extends Component {
   render() {
     return (
           <CardComponent/>
+
     );
   }
 }
