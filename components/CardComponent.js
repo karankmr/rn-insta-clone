@@ -2,15 +2,19 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, ScrollView, Image} from 'react-native';
 import { Card, ListItem, Avatar} from 'react-native-elements';
 import img from '../assets/img-1.2.png';
+import img2 from '../assets/img-4.1.png';
+import img3 from '../assets/img-3.2.png';
+import img5 from '../assets/img-5.1.png';
+import img4 from '../assets/img-3.1.png';
 import HomeIconWithBadge from "./IconWithBadge";
 
 const users = [
     {
-        name: 'Marianne',
-        age: 28,
+        name: 'Your Story',
         avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
     },
 ];
+
 export default class CardComponent extends Component {
 
     constructor(props) {
@@ -24,25 +28,71 @@ export default class CardComponent extends Component {
     }
     render() {
         return (
-            <ScrollView style={styles.container}>
+            <ScrollView >
                 <Card containerStyle={{padding: 0}} >
-                    {
-                        users.map((u, i) => {
-                            return (
-                                <View key={i} style={styles.avatar}>
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                    <View style={{flexDirection: 'row',justifyContent: "center",marginTop:10}}>
+                                <View style={styles.avatar}>
                                     <Avatar
                                         rounded
                                         source={img}
-                                        size="medium"
+                                        size="large"
                                     />
                                     <Text
-                                    style={{marginTop:10,marginBottom:10}}>{u.name}</Text>
-                                    <Text
-                                    style={{marginLeft:15}}>{u.age}</Text>
+                                    style={{marginTop:10,marginBottom:10,marginLeft:10}}>Your Story</Text>
                                 </View>
-                            );
-                        })
-                    }
+                        <View style={styles.avatar}>
+                            <Avatar
+                                rounded
+                                source={img3}
+                                size="large"
+                            />
+                            <Text
+                                style={{marginTop:10,marginBottom:10,marginLeft:10}}>Heloise</Text>
+                        </View>
+                        <View style={styles.avatar}>
+                            <Avatar
+                                rounded
+                                source={img5}
+                                size="large"
+                            />
+                            <Text
+                                style={{marginTop:10,marginBottom:10,marginLeft:10}}>Marianne</Text>
+                        </View>
+                        <View style={styles.avatar}>
+                            <Avatar
+                                rounded
+                                source={img4}
+                                size="large"
+                            />
+                            <Text
+                                style={{marginTop:10,marginBottom:10,marginLeft:10}}>Heloise</Text>
+                            </View>
+                        <View style={styles.avatar}>
+                            <Avatar
+                                rounded
+                                source={img2}
+                                size="large"
+                                showAccessory
+                            />
+                            <Text
+                                style={{marginTop:10,marginBottom:10,marginLeft:10}}>Marianne</Text>
+                            </View>
+                        <View style={styles.avatar}>
+                            <Avatar
+                                rounded
+                                source={{
+                                    uri:
+                                        'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+                                }}
+                                size="large"
+                            />
+                            <Text
+                                style={{marginTop:10,marginBottom:10,marginLeft:10}}>Daisy</Text>
+                            </View >
+                        </View>
+                    </ScrollView>
+
                 </Card>
                 <Card>
                     <Image source={require('../assets/img-5.1.png')} style={{height: 200, width: null, flex: 1}}/>
@@ -101,7 +151,7 @@ const styles = StyleSheet.create({
     avatar: {
          justifyContent: "center",
         paddingLeft:10,
-        marginTop:5
+        paddingRight:10,
 
     }
 });
